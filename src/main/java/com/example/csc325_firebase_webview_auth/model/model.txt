@@ -1,4 +1,3 @@
-
 Model
 Model classes are non-visual classes that encapsulate the app's data.
 Therefore, the model can be thought of as representing the app's domain model,

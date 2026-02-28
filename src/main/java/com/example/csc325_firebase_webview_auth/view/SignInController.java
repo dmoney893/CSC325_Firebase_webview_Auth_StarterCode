@@ -31,7 +31,7 @@ public class SignInController {
 
             String url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + WEBKEY;
 
-            String jsonBody = """
+            String jsonBody = """ 
                     {"email":"%s","password":"%s","returnSecureToken":true}
                     """.formatted(escape(email), escape(password));
 

@@ -1,4 +1,4 @@
-package com.example.csc325_firebase_webview_auth.view;//package modelview;
+package com.example.csc325_firebase_webview_auth.view;
 
 import com.example.csc325_firebase_webview_auth.model.Person;
 import com.example.csc325_firebase_webview_auth.viewmodel.AccessDataViewModel;
@@ -43,27 +43,42 @@ public class AccessFBView {
 
     @FXML
     private TextField nameField;
+
     @FXML
     private TextField majorField;
+
     @FXML
     private TextField ageField;
+
     @FXML
     private Button writeButton;
+
     @FXML
     private Button readButton;
+
     @FXML
     private Button switchroot;
+
     @FXML
     private TableView<Person> personTable;
+
     @FXML private TableColumn<Person, String> nameCol;
+
     @FXML private TableColumn<Person, String> majorCol;
+
     @FXML private TableColumn<Person, Integer> ageCol;
+
     @FXML
     private TextArea outputField;
-     private boolean key;
+
+    private boolean key;
+
     private ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
+
     private Person person;
+
     public ObservableList<Person> getListOfUsers() {
+
         return listOfUsers;
     }
 
@@ -101,6 +116,7 @@ public class AccessFBView {
     private void regRecord(ActionEvent event) {
         registerUser();
     }
+
      @FXML
     private void switchToSecondary() throws IOException {
         App.setRoot("/files/WebContainer.fxml");
@@ -111,15 +127,12 @@ public class AccessFBView {
         try {
             FileChooser chooser = new FileChooser();
             chooser.setTitle("Select Profile Picture");
-            chooser.getExtensionFilters().addAll(
-                    new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg", "*.gif"));
+            chooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg", "*.gif"));
 
             File file = chooser.showOpenDialog(nameField.getScene().getWindow());
             if (file == null) return;
 
-            String safeUser = (App.signedInEmail != null)
-                    ? App.signedInEmail.replace("@", "_at_").replace(".", "_")
-                    : "guest";
+            String safeUser = (App.signedInEmail != null) ? App.signedInEmail.replace("@", "_at_").replace(".", "_") : "guest";
 
             String ext = getFileExtension(file.getName());
             String objectName = "profilePictures/" + safeUser + "/" + UUID.randomUUID() + "." + ext;
@@ -158,12 +171,10 @@ public class AccessFBView {
         data.put("Name", name);
         data.put("Major", major);
         data.put("Age", age);
-        //asynchronously write data
         docRef.set(data);
 
         Person newPerson = new Person(name, major, age);
         listOfUsers.add(newPerson);
-
     }
 
         public boolean readFirebase()
@@ -172,9 +183,7 @@ public class AccessFBView {
              listOfUsers.clear();
              outputField.clear();
 
-        //asynchronously retrieve all documents
         ApiFuture<QuerySnapshot> future =  App.fstore.collection("References").get();
-        // future.get() blocks on response
         List<QueryDocumentSnapshot> documents;
         try
         {
@@ -208,8 +217,6 @@ public class AccessFBView {
         public void sendVerificationEmail() {
         try {
             UserRecord user = App.fauth.getUser("name");
-            //String url = user.getPassword();
-
         } catch (Exception e) {
         }
     }
@@ -230,10 +237,8 @@ public class AccessFBView {
             return true;
 
         } catch (FirebaseAuthException ex) {
-           // Logger.getLogger(FirestoreContext.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
-
     }
 
     @FXML
