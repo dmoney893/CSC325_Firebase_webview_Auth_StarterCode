@@ -54,7 +54,7 @@
              AnchorPane.leftAnchor="0.0"
              AnchorPane.rightAnchor="0.0"
              AnchorPane.bottomAnchor="0.0"
-             spacing="0"
+             spacing="40"
              styleClass="center-row">
            <children>
              <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="left-panel">

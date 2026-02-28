@@ -53,8 +53,7 @@
 
 .left-panel {
     -fx-background-color: #8B6914;
-    -fx-border-color: #6A4A0A;
-    -fx-border-width: 0 2 0 0;
+    -fx-border-color: #8B6914;
     -fx-min-width: 120px;
     -fx-max-width: 120px;
 }
