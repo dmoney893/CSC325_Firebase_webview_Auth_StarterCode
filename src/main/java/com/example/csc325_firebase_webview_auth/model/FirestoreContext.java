@@ -17,7 +17,7 @@ public class FirestoreContext {
         try {
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(getClass().getResourceAsStream("/files/key.json")))
-                    .setStorageBucket("cscsoftwareengineering.appspot.com")
+                    .setStorageBucket("cscsoftwareengineering.firebasestorage.app".trim())
                     .build();
             FirebaseApp.initializeApp(options);
             System.out.println("Firebase is initialized");
