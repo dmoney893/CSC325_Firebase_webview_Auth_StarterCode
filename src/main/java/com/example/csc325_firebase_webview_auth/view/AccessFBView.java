@@ -27,12 +27,13 @@ import javafx.scene.control.TextField;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AccessFBView {
 
-
-     @FXML
+    @FXML
     private TextField nameField;
     @FXML
     private TextField majorField;
@@ -46,6 +47,9 @@ public class AccessFBView {
     private Button switchroot;
     @FXML
     private TableView<Person> personTable;
+    @FXML private TableColumn<Person, String> nameCol;
+    @FXML private TableColumn<Person, String> majorCol;
+    @FXML private TableColumn<Person, Integer> ageCol;
     @FXML
     private TextArea outputField;
      private boolean key;
@@ -61,6 +65,12 @@ public class AccessFBView {
         nameField.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
         majorField.textProperty().bindBidirectional(accessDataViewModel.userMajorProperty());
         writeButton.disableProperty().bind(accessDataViewModel.isWritePossibleProperty().not());
+
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        majorCol.setCellValueFactory(new PropertyValueFactory<>("major"));
+        ageCol.setCellValueFactory(new PropertyValueFactory<>("age"));
+
+        personTable.setItems(listOfUsers);
     }
 
     @FXML
@@ -97,6 +107,8 @@ public class AccessFBView {
         public boolean readFirebase()
          {
              key = false;
+             listOfUsers.clear();
+             outputField.clear();
 
         //asynchronously retrieve all documents
         ApiFuture<QuerySnapshot> future =  App.fstore.collection("References").get();
@@ -181,9 +193,10 @@ public class AccessFBView {
     }
     @FXML
     private void clearOutput() {
-        if (outputField != null)
-            outputField.clear();
+        outputField.clear();
+        listOfUsers.clear();
     }
+
     @FXML
     private void deleteSelected() {
         if (personTable == null) return;
@@ -193,12 +206,13 @@ public class AccessFBView {
 
         personTable.getItems().remove(selected);
     }
+
     @FXML
     private void showAbout() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("About");
         alert.setHeaderText("CSC325 Firebase App");
-        alert.setContentText("Firestore + Auth + JavaFX\nMade by: (your name)");
+        alert.setContentText("Firestore + Auth + JavaFX\nMade by: Daniel Gron");
         alert.showAndWait();
     }
 }
