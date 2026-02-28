@@ -59,7 +59,7 @@ public class AccessFBView {
         return listOfUsers;
     }
 
-    void initialize() {
+    public void initialize() {
 
         AccessDataViewModel accessDataViewModel = new AccessDataViewModel();
         nameField.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
@@ -99,15 +99,22 @@ public class AccessFBView {
     }
 
     public void addData() {
+        String name = nameField.getText();
+        String major = majorField.getText();
+        int age = Integer.parseInt(ageField.getText());
 
         DocumentReference docRef = App.fstore.collection("References").document(UUID.randomUUID().toString());
 
         Map<String, Object> data = new HashMap<>();
-        data.put("Name", nameField.getText());
-        data.put("Major", majorField.getText());
-        data.put("Age", Integer.parseInt(ageField.getText()));
+        data.put("Name", name);
+        data.put("Major", major);
+        data.put("Age", age);
         //asynchronously write data
-        ApiFuture<WriteResult> result = docRef.set(data);
+        docRef.set(data);
+
+        Person newPerson = new Person(name, major, age);
+        listOfUsers.add(newPerson);
+
     }
 
         public boolean readFirebase()
@@ -126,16 +133,13 @@ public class AccessFBView {
             if(documents.size()>0)
             {
                 System.out.println("Outing....");
-                for (QueryDocumentSnapshot document : documents)
-                {
-                    outputField.setText(outputField.getText()+ document.getData().get("Name")+ " , Major: "+
-                            document.getData().get("Major")+ " , Age: "+
-                            document.getData().get("Age")+ " \n ");
-                    System.out.println(document.getId() + " => " + document.getData().get("Name"));
-                    person  = new Person(String.valueOf(document.getData().get("Name")),
-                            document.getData().get("Major").toString(),
-                            Integer.parseInt(document.getData().get("Age").toString()));
-                    listOfUsers.add(person);
+                for (QueryDocumentSnapshot document : documents) {
+                    Person p = new Person(
+                            String.valueOf(document.getData().get("Name")),
+                            String.valueOf(document.getData().get("Major")),
+                            Integer.parseInt(String.valueOf(document.getData().get("Age")))
+                    );
+                    listOfUsers.add(p);
                 }
             }
             else
