@@ -12,7 +12,7 @@ import java.net.http.HttpResponse;
 
 public class SignInController {
 
-    private static final String FIREBASE_WEB_API_KEY = "AIzaSyClgM7fQSGH4Er9nJhI_-xWahcX0r00X4";
+    private static final String WEBKEY = "AIzaSyClgM7fqsGH4Er9nJhII_-xWahcXOr00X4";
 
     @FXML private TextField emailField;
     @FXML private PasswordField passwordField;
@@ -29,15 +29,14 @@ public class SignInController {
                 return;
             }
 
-            String endpoint = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="
-                    + FIREBASE_WEB_API_KEY;
+            String url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + WEBKEY;
 
             String jsonBody = """
                     {"email":"%s","password":"%s","returnSecureToken":true}
                     """.formatted(escape(email), escape(password));
 
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(endpoint))
+                    .uri(URI.create(url))
                     .header("Content-Type", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                     .build();
@@ -46,7 +45,6 @@ public class SignInController {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() == 200) {
-                // Simple extraction (good enough for class projects)
                 String body = response.body();
                 String idToken = extractJsonValue(body, "idToken");
 
@@ -55,7 +53,6 @@ public class SignInController {
 
                 statusLabel.setText("✅ Signed in as: " + email);
 
-                // go back to main screen
                 App.setRoot("/files/AccessFBView.fxml");
             } else {
                 statusLabel.setText("❌ Sign in failed: " + response.body());

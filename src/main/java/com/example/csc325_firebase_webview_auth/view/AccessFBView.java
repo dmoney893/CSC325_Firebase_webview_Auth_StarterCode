@@ -71,6 +71,12 @@ public class AccessFBView {
         ageCol.setCellValueFactory(new PropertyValueFactory<>("age"));
 
         personTable.setItems(listOfUsers);
+
+        if (App.signedInEmail != null) {
+            outputField.setText("✅ Signed in as: " + App.signedInEmail + "\n");
+        } else {
+            outputField.setText("Not signed in.\n");
+        }
     }
 
     @FXML
