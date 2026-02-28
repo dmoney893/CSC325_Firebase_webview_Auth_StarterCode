@@ -28,6 +28,8 @@ public class App extends Application {
         fauth = FirebaseAuth.getInstance();
         scene = new Scene(loadFXML("/files/SplashView.fxml"));
         primaryStage.setScene(scene);
+        primaryStage.setWidth(900);
+        primaryStage.setHeight(600);
         primaryStage.show();
     }
 
