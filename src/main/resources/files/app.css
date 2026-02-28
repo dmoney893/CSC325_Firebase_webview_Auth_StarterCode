@@ -180,10 +180,12 @@
     -fx-background-color: #8B6914;
     -fx-text-fill: #F5E8C0;
     -fx-font-weight: bold;
-    -fx-font-size: 13px;
+    -fx-font-size: 12px;
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-pref-height: 36px;
+    -fx-min-width: 110px;
+    -fx-content-display: CENTER;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0, 0, 2);
 }
