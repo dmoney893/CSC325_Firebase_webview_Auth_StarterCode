@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/20.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.csc325_firebase_webview_auth.view.SignInController"
+      spacing="12" alignment="CENTER" prefWidth="420" prefHeight="320">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Sign In" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="emailField" promptText="Email"/>
+    <PasswordField fx:id="passwordField" promptText="Password"/>
+
+    <Button text="Sign In" onAction="#signIn"/>
+    <Label fx:id="statusLabel"/>
+
+    <Button text="Back" onAction="#goBack"/>
+</VBox>

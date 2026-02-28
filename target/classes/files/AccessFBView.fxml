@@ -21,12 +21,13 @@
    <children>
       <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="894.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-                  <MenuItem mnemonicParsing="false" text="Register" />
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
+            <Menu mnemonicParsing="false" text="File">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Register" onAction="#openRegister"/>
+                    <MenuItem mnemonicParsing="false" text="Sign In" onAction="#openSignIn"/>
+                    <MenuItem mnemonicParsing="false" text="Close" onAction="#closeApp"/>
+                </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />

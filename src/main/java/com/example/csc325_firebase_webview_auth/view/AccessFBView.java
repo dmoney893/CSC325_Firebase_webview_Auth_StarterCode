@@ -157,4 +157,19 @@ public class AccessFBView {
         }
 
     }
+
+    @FXML
+    private void openRegister() throws IOException {
+        App.setRoot("/files/RegisterView.fxml");
+    }
+
+    @FXML
+    private void openSignIn() throws IOException {
+        App.setRoot("/files/SignInView.fxml");
+    }
+
+    @FXML
+    private void closeApp() {
+        javafx.application.Platform.exit();
+    }
 }

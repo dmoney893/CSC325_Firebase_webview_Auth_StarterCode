@@ -21,6 +21,8 @@ public class App extends Application {
     public static FirebaseAuth fauth;
     public static Scene scene;
     private final FirestoreContext contxtFirebase = new FirestoreContext();
+    public static String signedInEmail = null;
+    public static String idToken = null;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
