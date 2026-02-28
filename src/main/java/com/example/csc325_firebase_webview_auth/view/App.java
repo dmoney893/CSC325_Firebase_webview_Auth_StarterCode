@@ -29,6 +29,7 @@ public class App extends Application {
         fstore = contxtFirebase.firebase();
         fauth = FirebaseAuth.getInstance();
         scene = new Scene(loadFXML("/files/SplashView.fxml"));
+        scene.getStylesheets().add(App.class.getResource("/files/app.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setWidth(900);
         primaryStage.setHeight(600);

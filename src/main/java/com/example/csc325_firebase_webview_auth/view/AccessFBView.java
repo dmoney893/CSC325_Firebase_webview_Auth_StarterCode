@@ -39,6 +39,8 @@ public class AccessFBView {
     @FXML
     private Button readButton;
     @FXML
+    private Button switchroot;
+    @FXML
     private TextArea outputField;
      private boolean key;
     private ObservableList<Person> listOfUsers = FXCollections.observableArrayList();

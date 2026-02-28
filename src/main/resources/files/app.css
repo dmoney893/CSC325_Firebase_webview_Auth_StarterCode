@@ -1,0 +1,205 @@
+.root-pane {
+    -fx-background-color: #8B6914;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+.menu-bar {
+    -fx-background-color: #5C4008;
+    -fx-padding: 2 4 2 4;
+    -fx-border-color: #3D2A00;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu-bar .menu{
+    -fx-background-color: transparent;
+    -fx-padding: 4 10 4 10;
+}
+
+.menu-bar .menu .label {
+    -fx-text-fill: #E8D8A0;
+    -fx-font-size: 13px;
+}
+
+.menu-bar .menu:hover,
+.menu-bar .menu:showing {
+    -fx-background-color: #7A5C10;
+    -fx-background-radius: 4;
+}
+
+.context-menu {
+    -fx-background-color: #5C4008;
+    -fx-border-color: #3D2A00;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 4 0 4 0;
+}
+
+.menu-item {
+    -fx-background-color: transparent;
+    -fx-padding: 5 16 5 16;
+}
+
+.menu-item .label {
+    -fx-text-fill: #E8D8A0;
+    -fx-font-size: 13px;
+}
+
+.menu-item:hover,
+.menu-item:focused {
+    -fx-background-color: #7A5C10;
+}
+
+.left-panel {
+    -fx-background-color: #8B6914;
+    -fx-border-color: #6A4A0A;
+    -fx-border-width: 0 2 0 0;
+    -fx-min-width: 120px;
+    -fx-max-width: 120px;
+}
+
+.avatar-pane {
+    -fx-background-color: #D4C090;
+    -fx-border-color: #A08030;
+    -fx-border-width: 2;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-min-width: 95px;
+    -fx-min-height: 95px;
+    -fx-max-width: 95px;
+    -fx-max-height: 95px;
+}
+
+.center-row {
+    -fx-background-color: #8B6914;
+}
+
+.student-table {
+    -fx-background-color: #F8F4EC;
+    -fx-border-color: #C8B880;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-table-cell-border-color: #E0D8C0;
+}
+
+.student-table .column-header-background {
+    -fx-background-color: #EAE0C0;
+    -fx-border-color: #C8B880 ;
+    -fx-border-width: 0 0 1 0;
+}
+
+.student-table .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: #D0C080;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 6 8 6 8;
+}
+
+.student-table .column-header .label {
+    -fx-text-fill: #4A3800;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-alignment: CENTER;
+}
+
+.student-table .column-header-background .filler {
+    -fx-background-color: #EAE0C0;
+}
+
+.student-table .table-cell {
+    -fx-text-fill: #3A2800;
+    -fx-border-color: #EEE8D0;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5 8 5 8;
+    -fx-font-size: 12px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.student-table .table-row-cell {
+    -fx-background-color: #F8F4EC;
+}
+
+.student-table .table-row-cell:odd {
+    -fx-background-color: #F0EAD8;
+}
+
+.student-table .table-row-cell:selected {
+    -fx-background-color: #B8D860;
+}
+
+.student-table .table-row-cell:selected .table-cell {
+    -fx-text-fill: #2A2000;
+}
+
+.student-table .placeholder .label {
+    -fx-text-fill: #9A8860;
+    -fx-font-size: 13px;
+    -fx-font-style: italic;
+}
+
+.student-table .scroll-bar:vertical .thumb {
+    -fx-background-color: #C8B880;
+    -fx-background-radius: 4;
+}
+.student-table .scroll-bar:vertical .track {
+    -fx-background-color: #EAE0C0;
+}
+
+.right-panel {
+    -fx-background-color: #7DB72F;
+    -fx-min-width: 185px;
+    -fx-max-width: 185px;
+}
+
+.input-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #5A8A10;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-text-fill: #2A2A00;
+    -fx-prompt-text-fill: #5A6A20;
+    -fx-padding: 5 8 5 8;
+    -fx-font-size: 12px;
+    -fx-pref-height: 28px;
+}
+
+.input-field:focused {
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 2;
+    -fx-background-color: #BCED50;
+}
+
+.field-active {
+    -fx-border-color: #88FF00;
+    -fx-border-width: 2;
+}
+
+.action-button {
+    -fx-background-color: #8B6914;
+    -fx-text-fill: #F5E8C0;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-pref-height: 36px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0, 0, 2);
+}
+
+.action-button:hover {
+    -fx-background-color: #A6782B;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0, 0, 3);
+}
+
+.action-button:pressed {
+    -fx-background-color: #6F500F;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 2, 0, 0, 1);
+    -fx-translate-y: 1;
+}
+
+.separator {
+    -fx-background-color: #7A5C10;
+}

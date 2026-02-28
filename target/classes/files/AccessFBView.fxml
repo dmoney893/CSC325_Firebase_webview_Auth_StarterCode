@@ -42,6 +42,77 @@
       </MenuBar>
       <HBox layoutX="6.0" layoutY="28.0" prefHeight="535.0" prefWidth="880.0">
          <children>
+
+             <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="left-panel">
+                 <children>
+                     <ImageView fitHeight="150.0" fitWidth="129.0"
+                                layoutX="17.0" layoutY="14.0"
+                                pickOnBounds="true" preserveRatio="true">
+                         <effect>
+                             <InnerShadow>
+                                 <color>
+                                     <Color red="0.20652228593826294" green="0.1679999977350235" blue="0.6000000238418579" />
+                                 </color>
+                             </InnerShadow>
+                         </effect>
+                         <image>
+                             <Image url="@profile_empty.png" />
+                         </image>
+                     </ImageView>
+                 </children>
+             </AnchorPane>
+
+             <VBox prefHeight="535.0" prefWidth="551.0">
+                 <children>
+                     <TextArea fx:id="outputField" prefHeight="184.0" prefWidth="514.0" />
+                     <TableView prefHeight="351.0" prefWidth="514.0" styleClass="student-table">
+                         <columns>
+                             <TableColumn prefWidth="75.0" text="C1" />
+                             <TableColumn prefWidth="75.0" text="C2" />
+                         </columns>
+                     </TableView>
+                 </children>
+             </VBox>
+
+          <VBox prefHeight="535.0" prefWidth="241.0" spacing="10.0" styleClass="right-panel">
+          <children>
+
+              <TextField fx:id="nameField" alignment="TOP_LEFT"
+                         prefHeight="25.0" prefWidth="272.0"
+                         promptText="Name"
+                         styleClass="input-field"/>
+
+              <TextField fx:id="majorField"
+                         promptText="Major"
+                         styleClass="input-field"/>
+
+              <TextField fx:id="ageField"
+                         promptText="Age"
+                         styleClass="input-field"/>
+
+              <HBox prefHeight="32.0" prefWidth="465.0">
+                  <children>
+                      <Button fx:id="readButton" mnemonicParsing="false"
+                              onAction="#readRecord"
+                              prefHeight="25.0" prefWidth="123.0"
+                              text="Read" textAlignment="CENTER"
+                              styleClass="action-button">
+                          <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                          </HBox.margin>
+                      </Button>
+
+                      <Button fx:id="writeButton" mnemonicParsing="false"
+                              onAction="#addRecord"
+                              prefHeight="25.0" prefWidth="128.0"
+                              text="Write" textAlignment="CENTER"
+                              styleClass="action-button">
+                          <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                          </HBox.margin>
+                      </Button>
+                  </children>
+              </HBox>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ImageView fitHeight="150.0" fitWidth="129.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -58,38 +129,12 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <VBox prefHeight="535.0" prefWidth="551.0">
-               <children>
-                  <TextArea fx:id="outputField" prefHeight="184.0" prefWidth="514.0" />
-                  <TableView prefHeight="351.0" prefWidth="514.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-            <VBox prefHeight="535.0" prefWidth="241.0" spacing="10.0">
-               <children>
-                  <TextField fx:id="nameField" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="272.0" promptText="Name" />
-                  <TextField fx:id="majorField" promptText="Major" />
-                  <TextField fx:id="ageField" promptText="Age" />
-                  <HBox prefHeight="32.0" prefWidth="465.0">
-                     <children>
-                        <Button fx:id="readButton" mnemonicParsing="false" onAction="#readRecord" prefHeight="25.0" prefWidth="123.0" text="Read" textAlignment="CENTER">
-                           <HBox.margin>
-                              <Insets left="20.0" right="20.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Button fx:id="writeButton" mnemonicParsing="false" onAction="#addRecord" prefHeight="25.0" prefWidth="128.0" text="Write" textAlignment="CENTER">
-                           <HBox.margin>
-                              <Insets left="20.0" right="20.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <Button fx:id="switchroot" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="25.0" prefWidth="283.0" text="Switch" textAlignment="CENTER" />
-               </children>
+                      <Button fx:id="switchroot" mnemonicParsing="false"
+                              onAction="#switchToSecondary"
+                              prefHeight="25.0" prefWidth="283.0"
+                              text="Switch" textAlignment="CENTER"
+                              styleClass="action-button" />
+                  </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
