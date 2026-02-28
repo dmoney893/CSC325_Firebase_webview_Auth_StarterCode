@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 /**
  * JavaFX App
  */
-//testing if commit works
+
 public class App extends Application {
 
     public static Firestore fstore;
