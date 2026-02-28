@@ -9,14 +9,22 @@ import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.UserRecord;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.Bucket;
+import com.google.firebase.cloud.StorageClient;
 
 import java.io.IOException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.nio.file.Files;
+import java.util.UUID;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
+import javafx.stage.FileChooser;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -96,6 +104,47 @@ public class AccessFBView {
      @FXML
     private void switchToSecondary() throws IOException {
         App.setRoot("/files/WebContainer.fxml");
+    }
+
+    @FXML
+    private void uploadPicture() {
+        try {
+            FileChooser chooser = new FileChooser();
+            chooser.setTitle("Select Profile Picture");
+            chooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg", "*.gif"));
+
+            File file = chooser.showOpenDialog(nameField.getScene().getWindow());
+            if (file == null) return;
+
+            String safeUser = (App.signedInEmail != null)
+                    ? App.signedInEmail.replace("@", "_at_").replace(".", "_")
+                    : "guest";
+
+            String ext = getFileExtension(file.getName());
+            String objectName = "profilePictures/" + safeUser + "/" + UUID.randomUUID() + "." + ext;
+
+            Bucket bucket = StorageClient.getInstance().bucket();
+            String contentType = Files.probeContentType(file.toPath());
+            if (contentType == null) contentType = "application/octet-stream";
+
+            try (FileInputStream fis = new FileInputStream(file)) {
+                Blob blob = bucket.create(objectName, fis, contentType);
+                System.out.println("✅ Uploaded to: gs://" + bucket.getName() + "/" + objectName);
+
+                outputField.setText("✅ Uploaded profile picture!\nPath: " + objectName);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            outputField.setText("❌ Upload failed: " + e.getMessage());
+        }
+    }
+
+    private static String getFileExtension(String filename) {
+        int dot = filename.lastIndexOf('.');
+        if (dot < 0) return "png";
+        return filename.substring(dot + 1).toLowerCase();
     }
 
     public void addData() {

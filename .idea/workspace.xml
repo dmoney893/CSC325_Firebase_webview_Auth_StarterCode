@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Made the read and write text boxes on top of each other rather than horizontal">
+    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Redirected the output so it is in tableview">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/FirestoreContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/FirestoreContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +165,7 @@
       <workItem from="1710732741753" duration="608000" />
       <workItem from="1710733353801" duration="5503000" />
       <workItem from="1772243798867" duration="8242000" />
-      <workItem from="1772291278029" duration="4594000" />
+      <workItem from="1772291278029" duration="5943000" />
     </task>
     <task id="LOCAL-00001" summary="reduce Java version to 17">
       <option name="closed" value="true" />
@@ -300,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772295242711</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Redirected the output so it is in tableview">
+      <option name="closed" value="true" />
+      <created>1772296170678</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1772296170678</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +349,7 @@
     <MESSAGE value="Completed the menu implementations" />
     <MESSAGE value="MAde sure the sign in works properly so users can sigh in" />
     <MESSAGE value="Made the read and write text boxes on top of each other rather than horizontal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made the read and write text boxes on top of each other rather than horizontal" />
+    <MESSAGE value="Redirected the output so it is in tableview" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redirected the output so it is in tableview" />
   </component>
 </project>

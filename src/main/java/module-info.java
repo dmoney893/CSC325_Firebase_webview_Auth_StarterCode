@@ -11,6 +11,7 @@ module com.example.csc325_firebase_webview_auth {
     requires firebase.admin;
     requires com.google.api.apicommon;
 
+    requires google.cloud.storage;
     requires google.cloud.core;
     requires com.google.auth;
     requires java.net.http;

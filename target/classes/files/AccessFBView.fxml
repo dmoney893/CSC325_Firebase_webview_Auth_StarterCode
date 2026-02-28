@@ -117,6 +117,7 @@
                               text="Write" textAlignment="CENTER"
                               styleClass="action-button"
                               prefWidth="150"/>
+                      <Button text="Upload Picture" onAction="#uploadPicture" styleClass="action-button"/>
                   </children>
               </VBox>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
