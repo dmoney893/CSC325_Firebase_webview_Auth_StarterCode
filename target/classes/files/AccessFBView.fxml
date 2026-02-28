@@ -16,32 +16,40 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 
 <AnchorPane prefHeight="571.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.AccessFBView">
    <children>
-       <MenuBar AnchorPane.topAnchor="0.0"
-                AnchorPane.leftAnchor="0.0"
-                AnchorPane.rightAnchor="0.0">
-        <menus>
-            <Menu mnemonicParsing="false" text="File">
-                <items>
-                    <MenuItem mnemonicParsing="false" text="Register" onAction="#openRegister"/>
-                    <MenuItem mnemonicParsing="false" text="Sign In" onAction="#openSignIn"/>
-                    <MenuItem mnemonicParsing="false" text="Close" onAction="#closeApp"/>
-                </items>
-            </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
+        <MenuBar AnchorPane.topAnchor="0.0"
+                 AnchorPane.leftAnchor="0.0"
+                 AnchorPane.rightAnchor="0.0">
+            <menus>
+
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem text="Register" onAction="#openRegister"/>
+                        <MenuItem text="Sign In" onAction="#openSignIn"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Switch to Web" onAction="#switchToSecondary"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Close" onAction="#closeApp"/>
+                    </items>
+                </Menu>
+
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem text="Clear Output" onAction="#clearOutput"/>
+                        <MenuItem text="Delete Selected" onAction="#deleteSelected"/>
+                    </items>
+                </Menu>
+
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem text="About" onAction="#showAbout"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
        <HBox AnchorPane.topAnchor="28.0"
              AnchorPane.leftAnchor="0.0"
              AnchorPane.rightAnchor="0.0"
@@ -82,7 +90,6 @@
 
           <VBox prefHeight="535.0" prefWidth="241.0" spacing="10.0" styleClass="right-panel">
           <children>
-
               <TextField fx:id="nameField" alignment="TOP_LEFT"
                          prefHeight="25.0" prefWidth="272.0"
                          promptText="Name"

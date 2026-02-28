@@ -24,6 +24,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableView;
 
 public class AccessFBView {
 
@@ -40,6 +44,8 @@ public class AccessFBView {
     private Button readButton;
     @FXML
     private Button switchroot;
+    @FXML
+    private TableView<Person> personTable;
     @FXML
     private TextArea outputField;
      private boolean key;
@@ -71,7 +77,6 @@ public class AccessFBView {
     private void regRecord(ActionEvent event) {
         registerUser();
     }
-
      @FXML
     private void switchToSecondary() throws IOException {
         App.setRoot("/files/WebContainer.fxml");
@@ -173,5 +178,27 @@ public class AccessFBView {
     @FXML
     private void closeApp() {
         javafx.application.Platform.exit();
+    }
+    @FXML
+    private void clearOutput() {
+        if (outputField != null)
+            outputField.clear();
+    }
+    @FXML
+    private void deleteSelected() {
+        if (personTable == null) return;
+
+        Person selected = personTable.getSelectionModel().getSelectedItem();
+        if (selected == null) return;
+
+        personTable.getItems().remove(selected);
+    }
+    @FXML
+    private void showAbout() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("CSC325 Firebase App");
+        alert.setContentText("Firestore + Auth + JavaFX\nMade by: (your name)");
+        alert.showAndWait();
     }
 }
