@@ -19,7 +19,9 @@
 
 <AnchorPane prefHeight="571.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.AccessFBView">
    <children>
-      <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="894.0">
+       <MenuBar AnchorPane.topAnchor="0.0"
+                AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0">
         <menus>
             <Menu mnemonicParsing="false" text="File">
                 <items>
@@ -40,9 +42,13 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox layoutX="6.0" layoutY="28.0" prefHeight="535.0" prefWidth="880.0">
-         <children>
-
+       <HBox AnchorPane.topAnchor="28.0"
+             AnchorPane.leftAnchor="0.0"
+             AnchorPane.rightAnchor="0.0"
+             AnchorPane.bottomAnchor="0.0"
+             spacing="0"
+             styleClass="center-row">
+           <children>
              <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="left-panel">
                  <children>
                      <ImageView fitHeight="150.0" fitWidth="129.0"

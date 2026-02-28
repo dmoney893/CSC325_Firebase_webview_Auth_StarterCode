@@ -40,9 +40,13 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox layoutX="6.0" layoutY="28.0" prefHeight="535.0" prefWidth="880.0">
-         <children>
-
+       <HBox AnchorPane.topAnchor="28.0"
+             AnchorPane.leftAnchor="0.0"
+             AnchorPane.rightAnchor="0.0"
+             AnchorPane.bottomAnchor="0.0"
+             spacing="0"
+             styleClass="center-row">
+           <children>
              <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="left-panel">
                  <children>
                      <ImageView fitHeight="150.0" fitWidth="129.0"
@@ -76,7 +80,6 @@
 
           <VBox prefHeight="535.0" prefWidth="241.0" spacing="10.0" styleClass="right-panel">
           <children>
-
               <TextField fx:id="nameField" alignment="TOP_LEFT"
                          prefHeight="25.0" prefWidth="272.0"
                          promptText="Name"
