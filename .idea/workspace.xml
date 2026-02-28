@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Enabled adding a profile picture to Firebase Storage">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/FirestoreContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/FirestoreContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/model.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/model.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/SignInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/files/WebContainer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/WebContainer.fxml" afterDir="false" />
+    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="Fixed syntax errors">
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/AccessFBView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/AccessFBView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/files/WebContainer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/files/WebContainer.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +163,7 @@
       <workItem from="1710732741753" duration="608000" />
       <workItem from="1710733353801" duration="5503000" />
       <workItem from="1772243798867" duration="8242000" />
-      <workItem from="1772291278029" duration="6579000" />
+      <workItem from="1772291278029" duration="7027000" />
     </task>
     <task id="LOCAL-00001" summary="reduce Java version to 17">
       <option name="closed" value="true" />
@@ -322,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772297489337</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed syntax errors">
+      <option name="closed" value="true" />
+      <created>1772297897637</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1772297897637</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,6 +365,7 @@
     <MESSAGE value="Made the read and write text boxes on top of each other rather than horizontal" />
     <MESSAGE value="Redirected the output so it is in tableview" />
     <MESSAGE value="Enabled adding a profile picture to Firebase Storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enabled adding a profile picture to Firebase Storage" />
+    <MESSAGE value="Fixed syntax errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed syntax errors" />
   </component>
 </project>
